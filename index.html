@@ -96,7 +96,7 @@
       var hintMessage = document.querySelector('#hintmessage');
       var str = name.value;
       // 输入的内容是否在4到16个字符
-      var strLength = str.replace(/[xd800-xffff]/g, 'A').replace(/[^x00-xff]/g, 'AB').length;
+      var strLength = str.replace(/[\u3000-\u9fff]/g, 'AB').length;
       if (str.length === 0) {
         hintMessage.textContent = '姓名不能为空';
         hintMessage.classList.remove('good-input-hint');
